@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background: #F3F5FC;
+}
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0rem 1rem;
+}
+
+.logo {
+    align-items: left;
+    padding: 1rem 0rem;
+}
+
+.contenedor__Uno {
+    padding: 0rem .5rem;
+    width: 50rem;
+    height: 30rem;
+    border: 1px solid black;
+}
+
+.contenedor__Uno textarea {
+
+    width: 90%;
+    height: 20rem;
+    margin: 1rem;
+    border-radius: 10px;
+    background-color: #F3F5FC;
+    border: none;
+    font-size: 1.5rem;
+    color: #0A3871;
+}
+
+.text__Area textarea::placeholder {
+    color: #8aa4c4;
+    text-align: left;
+
+}
+
+.text__Area textarea:hover {
+    border: none;
+    background-color: #e8e9eb54;
+}
+
+.alerta img {
+    height: 1.5rem;
+}
+
+.alerta {
+    display: flex;
+    justify-content: left;
+}
+
+.alerta .parrafo__Uno {
+    font-size: 1.2rem;
+    padding-bottom: .5rem;
+    padding-left: .5rem;
+}
+
+.contenedor__Dos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 25px;
+    width: 25%;
+}
+
+.contenedor__Dos .parrafo__Dos,
+h3 {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 0rem 1rem 1rem 1rem;
+}
+
+.contenedor__Muneco {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor__Muneco img {
+    width: 80%;
+    padding: 0rem 0rem 3rem 0rem;
+}
+
+main input {
+    cursor: pointer;
+}
+
+.btnEncriptar {
+    width: 15rem;
+    height: 3rem;
+    border-radius: 24px;
+    border: none;
+    background-color: #0A3871;
+    color: white;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+
+.btnDesencriptar {
+    width: 15rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border: 1px solid #0A3871;
+    background-color: #0a387100;
+    color: #0A3871;
+    font-size: 1rem;
+}
+
+
+.btn__copiar {
+    width: 15rem;
+    height: 3rem;
+    border-radius: 24rem;
+    border: 1px solid #0A3871;
+    background-color: #0a387100;
+    color: #0A3871;
+    font-size: 1rem;
+}
+
+@media (max-width: 950px) {
+    main {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    main section {
+        margin-top: .5rem;
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor__Uno {
+        padding: 0rem .5rem;
+        width: auto;
+        height: auto;
+    }
+
+    .contenedor__Uno textarea {
+        width: 20em;
+        height: 30rem;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+
+    .text__Area textarea::placeholder {
+        color: #8aa4c4;
+        text-align: left;
+    }
+
+    .contenedor__Uno .alerta .parrafo__Uno {
+        font-size: 1rem;
+        padding-left: .5rem;
+        padding-bottom: .5rem;
+    }
+
+    .alerta img {
+        height: 1rem;
+    }
+
+    .contenedor__botonesDeAccion input {
+        width: 9rem;
+        height: 3rem;
+    }
+
+    .contenedor__Dos {
+        background-color: white;
+        border-radius: 25px;
+        width: 80%;
+    }
+
+    .contenedor__Muneco .dibujo {
+        display: none;
+    }
+
+    .contenedor__Dos .parrafo__Dos,
+    h3 {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        font-size: 1rem;
+        padding: 1rem 1rem .5rem 1rem;
+    }
+
+}

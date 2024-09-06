@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/desing.css">
+    <title> Encriptador de textos | IngDave </title>
+</head>
+
+<body>
+    <header class="logo">
+        <img src="asset/Logo.svg" alt="alura logo">
+    </header>
+    <main>
+        <section class="contenedor__Uno">
+                <div class="text__Area">
+                    <textarea class="caja__Texto" name="text" id="text" placeholder="Ingrese texto aqui"></textarea>
+                </div>
+                <div class="alerta">
+                    <img src="asset/alert.svg" alt="icono">
+                    <p class="parrafo__Uno">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="contenedor__botonesDeAccion">
+                    <input class="btnEncriptar" type="button" value="Encriptar"></input>
+                    <input class="btnDesencriptar" type="button" value="Desencriptar"></input>
+                </div>
+        </section>
+
+        <section class="contenedor__Dos">
+            <div class="contenedor__Muneco">
+                <img class="dibujo" src="asset/Muñeco.svg" alt="dibujo">
+            </div>
+            <div class="contenedor__Parrafo">
+                <h3>Ningún mensaje fue encontrado</h3>
+                <p class="parrafo__Dos">Ingresa el texto que desees encriptar o desencriptar.</p>
+            </div>
+            <div class="contenedor__btnCopiar">
+                <input class="btn__copiar" type="button" value="Copiar"></input>
+            </div>
+        </section>
+    </main>
+    <script src="js/controler.js"></script>
+</body>
+
+</html>
