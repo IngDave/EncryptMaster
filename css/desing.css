@@ -8,14 +8,9 @@ body {
     background: #F3F5FC;
 }
 
-
 main {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    justify-content: space-evenly;
     margin: 0rem 1rem;
 }
 
@@ -26,16 +21,15 @@ main {
 
 .contenedor__Uno {
     padding: 0rem .5rem;
-    width: 50rem;
-    height: 30rem;
 }
 
 .contenedor__Uno textarea {
-    width: 90%;
-    height: 20rem;
+    width: 100%;
+    max-width:26rem;
+    height: 55dvh;
     border-radius: 10px;
     padding: 2.5rem;
-    background-color: #F3F5FC;
+    background-color: #244cff07;
     border: none;
     font-size: 1.5rem;
     color: #0A3871;
@@ -74,7 +68,7 @@ main {
     justify-content: center;
     background-color: white;
     border-radius: 25px;
-    width: 25%;
+    width: 35%;
 }
 
 .contenedor__Dos .parrafo__Dos,
@@ -133,7 +127,7 @@ main input {
     font-size: 1rem;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
     main {
         flex-direction: column;
         justify-content: flex-start;
@@ -150,14 +144,21 @@ main input {
     }
 
     .contenedor__Uno {
-        padding: 0rem .5rem;
-        width: auto;
-        height: auto;
+        width: 80%;
+        padding: 0rem .5rem;  
     }
 
+    .contenedor__Uno .text__Area {
+        width: 100%;
+        padding: 0rem .5rem;
+        display: flex;
+        justify-content: center;
+       
+    }
+   
     .contenedor__Uno textarea {
-        width: 20em;
-        height: 30rem;
+        width: 100%;
+        height: 40dvh;
         border-radius: 10px;
         font-size: 1rem;
     }
@@ -178,7 +179,7 @@ main input {
     }
 
     .contenedor__botonesDeAccion input {
-        width: 9rem;
+        width: 7rem;
         height: 3rem;
     }
 
@@ -190,6 +191,8 @@ main input {
 
     .contenedor__Muneco .dibujo {
         display: none;
+        visibility: hidden;
+        top: 0;
     }
 
     .contenedor__Dos .parrafo__Dos,

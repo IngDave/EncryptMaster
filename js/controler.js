@@ -1,4 +1,4 @@
-const encriptar = document.querySelector('.btnEncriptar');
+const encriptar = document.('.btnEncriptar');
 const textoAEncriptar = document.querySelector('x');
 
 encriptar.addEventListener("click", e =>{
