@@ -176,6 +176,13 @@ main input {
 
     .alerta img {
         height: .8rem;
+        padding-top: .5rem;
+    }
+
+    .alerta .parrafo__Uno {
+        font-size: .8rem;
+        padding-top: .5rem;
+        padding-left: .5rem;
     }
 
     .contenedor__botonesDeAccion input {
