@@ -28,25 +28,23 @@ main {
     padding: 0rem .5rem;
     width: 50rem;
     height: 30rem;
-    border: 1px solid black;
 }
 
 .contenedor__Uno textarea {
-
     width: 90%;
     height: 20rem;
-    margin: 1rem;
     border-radius: 10px;
+    padding: 2.5rem;
     background-color: #F3F5FC;
     border: none;
     font-size: 1.5rem;
     color: #0A3871;
+    outline: none;
+    transition: all .2s;
 }
 
 .text__Area textarea::placeholder {
     color: #8aa4c4;
-    text-align: left;
-
 }
 
 .text__Area textarea:hover {
