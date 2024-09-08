@@ -25,7 +25,7 @@ main {
 
 .contenedor__Uno textarea {
     width: 100%;
-    max-width:26rem;
+    max-width: 26rem;
     height: 55dvh;
     border-radius: 10px;
     padding: 2.5rem;
@@ -84,6 +84,25 @@ h3 {
 .contenedor__Muneco {
     display: flex;
     justify-content: center;
+    padding-top: 1rem;
+}
+
+.contenedor__Parrafo{
+    text-align: center;
+}
+
+.parrafo__Encriptado {
+    padding: 1rem;
+}
+
+.ocultarInfo {
+    display: none;
+}
+
+.parrafo__Resultado{
+    padding: 2rem 0rem;
+    font-size: 2rem;
+
 }
 
 .contenedor__Muneco img {
@@ -106,7 +125,6 @@ main input {
     margin-right: 1rem;
 }
 
-
 .btnDesencriptar {
     width: 15rem;
     height: 3rem;
@@ -117,6 +135,17 @@ main input {
     font-size: 1rem;
 }
 
+.contenedor__btnCopiarDisable {
+    padding: 1rem;
+    display: none;
+    transition: all .5s ease;
+}
+
+.contenedor__btnCopiarEnable {
+    padding: 1rem;
+    display: flex;
+
+}
 
 .btn__copiar {
     width: 15rem;
@@ -127,6 +156,102 @@ main input {
     color: #0A3871;
     font-size: 1rem;
 }
+
+/*loader*/
+.loader__Uno {
+    height: 5px;
+    width: 5px;
+    color: #0A3871;
+    box-shadow: -10px -10px 0 5px,
+                -10px -10px 0 5px,
+                -10px -10px 0 5px,
+                -10px -10px 0 5px;
+    animation: loader-38 6s infinite;
+  }
+
+  @keyframes loader-38 {
+    0% {
+      box-shadow: -10px -10px 0 5px,
+                  -10px -10px 0 5px,
+                  -10px -10px 0 5px,
+                  -10px -10px 0 5px;
+    }
+    8.33% {
+      box-shadow: -10px -10px 0 5px,
+                  10px -10px 0 5px,
+                  10px -10px 0 5px,
+                  10px -10px 0 5px;
+    }
+    16.66% {
+      box-shadow: -10px -10px 0 5px,
+                  10px -10px 0 5px,
+                  10px 10px 0 5px,
+                  10px 10px 0 5px;
+    }
+    24.99% {
+      box-shadow: -10px -10px 0 5px,
+                  10px -10px 0 5px,
+                  10px 10px 0 5px,
+                  -10px 10px 0 5px;
+    }
+    33.32% {
+      box-shadow: -10px -10px 0 5px,
+                  10px -10px 0 5px,
+                  10px 10px 0 5px,
+                  -10px -10px 0 5px;
+    }
+    41.65% {
+      box-shadow: 10px -10px 0 5px,
+                  10px -10px 0 5px,
+                  10px 10px 0 5px,
+                  10px -10px 0 5px;
+    }
+    49.98% {
+      box-shadow: 10px 10px 0 5px,
+                10px 10px 0 5px,
+                10px 10px 0 5px,
+                10px 10px 0 5px;
+    }
+    58.31% {
+      box-shadow: -10px 10px 0 5px,
+                  -10px 10px 0 5px,
+                  10px 10px 0 5px,
+                  -10px 10px 0 5px;
+    }
+    66.64% {
+      box-shadow: -10px -10px 0 5px,
+                  -10px -10px 0 5px,
+                  10px 10px 0 5px,
+                  -10px 10px 0 5px;
+    }
+    74.97% {
+      box-shadow: -10px -10px 0 5px,
+                  10px -10px 0 5px,
+                  10px 10px 0 5px,
+                  -10px 10px 0 5px;
+    }
+    83.3% {
+      box-shadow: -10px -10px 0 5px,
+                  10px 10px 0 5px,
+                  10px 10px 0 5px,
+                  -10px 10px 0 5px;
+    }
+    91.63% {
+      box-shadow: -10px -10px 0 5px,
+                  -10px 10px 0 5px,
+                  -10px 10px 0 5px,
+                  -10px 10px 0 5px;
+    }
+    100% {
+      box-shadow: -10px -10px 0 5px,
+                  -10px -10px 0 5px,
+                  -10px -10px 0 5px,
+                  -10px -10px 0 5px;
+    }
+  }
+
+
+
 
 @media (max-width: 900px) {
     main {
@@ -146,7 +271,7 @@ main input {
 
     .contenedor__Uno {
         width: 80%;
-        padding: 0rem .5rem;  
+        padding: 0rem .5rem;
     }
 
     .contenedor__Uno .text__Area {
@@ -154,9 +279,9 @@ main input {
         padding: 0rem .5rem;
         display: flex;
         justify-content: center;
-       
+
     }
-   
+
     .contenedor__Uno textarea {
         width: 100%;
         height: 25dvh;
