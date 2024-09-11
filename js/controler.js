@@ -1,3 +1,5 @@
+
+
 // La letra "e" es convertida para "enter"
 // La letra "i" es convertida para "imes"
 // La letra "a" es convertida para "ai"
@@ -12,17 +14,30 @@ const muneico = d.getElementById('muneico');
 const parrafoDos = d.getElementById('contenedor__Parrafo');
 const btnCopiarDisable = d.getElementById('btnCopiarDisable');
 const textoResultadoArea = d.getElementById('parrafo__Resultado');
+let contenido = d.getElementById('contenido');
+
+/**permite que el preloader ejecute un tiempo*/
+function ocultarPreloader(tiempo) {
+    setTimeout(function () {
+        d.getElementById('preloader').style.display = 'none';
+    }, tiempo);
+}
+ocultarPreloader(1800);
+
+setTimeout(()=> {
+    contenido.classList.remove("ocultar");
+}, 1820);
 
 
 /*agregamos el evento de "hacer click" y lo ejecutamos en una funcion
 */
 btnEncriptar.onclick = encriptar;
 function encriptar() {
-    
-    
+
+
 }
 
-textarea.addEventListener("input", (e)=>{
+textarea.addEventListener("input", (e) => {
     muneico.style.display = "none";
     parrafoDos.style.display = "none"
     console.log(e.target.value)
@@ -60,4 +75,3 @@ encriptar.addEventListener("click", e =>{
     let txt = texto.normalize("NFD").replace(/[$\.¿\?~!\¡@#%^&*()_|}\{[\]>\<:"`;,\u0300-\u036f']/g, " ");
     console.log(txt);
 })*/
-

@@ -9,41 +9,97 @@
 </head>
 
 <body>
-    <header class="logo">
-        <img src="asset/Logo.svg" alt="alura logo">
-    </header>
-    <main>
-        <section class="contenedor__Uno">
-            <div class="text__Area">
-                <textarea id="caja__Texto" class="caja__Texto" name="text" id="textarea"
-                    placeholder="Ingrese texto aqui"></textarea>
-            </div>
-            <div class="alerta">
-                <img src="asset/alert.svg" alt="icono">
-                <p class="parrafo__Uno">Solo letras minúsculas y sin acentos</p>
-            </div>
-            <div class="contenedor__botonesDeAccion">
-                <input id="btnEncriptar" class="btnEncriptar" type="button" value="Encriptar"></input>
-                <input id="btnDesencriptar" class="btnDesencriptar" type="button" value="Desencriptar"></input>
-            </div>
-        </section>
 
-        <section class="contenedor__Dos">
-            <div id="muneico" class="contenedor__Muneco">
-                <img class="dibujo" src="asset/Muñeco.svg" alt="dibujo">
-            </div>
-            <span id="loader" class="loader__Uno ocultarInfo"></span>
-            <div id="contenedor__Parrafo" class="contenedor__Parrafo">
-                <h3>Ningún mensaje fue encontrado</h3>
-                <p class="parrafo__Dos">Ingresa el texto que desees encriptar o desencriptar.</p>
-            </div>
-            <div id="parrafo__Encriptado" class="parrafo__Encriptado">
-                <p id="parrafo__Resultado" class="parrafo__Resultado"></p>
-            </div>
-            <div id="btnCopiarDisable" class="contenedor__btnCopiarDisable">
-                <input class="btn__copiar" type="button" value="Copiar"></input>
-            </div>
-        </section>
+    <div class="contenedor" id="preloader">
+        <div class="hexagon" aria-label="Animated hexagonal ripples"></div>
+        <div class="hexagon__group">
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+        </div>
+        <div class="hexagon__group">
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+        </div>
+        <div class="hexagon__group">
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+        </div>
+        <div class="hexagon__group">
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+        </div>
+        <div class="hexagon__group">
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+        </div>
+        <div class="hexagon__group">
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+            <div class="hexagon__sector"></div>
+        </div>
+    </div>
+
+    <div class="ocultar" id="contenido">
+
+        <header class="logo">
+            <img src="asset/Logo.svg" alt="alura logo">
+        </header>
+        <main>
+            <section class="contenedor__Uno">
+                <div class="text__Area">
+                    <textarea id="caja__Texto" class="caja__Texto" name="text" id="textarea"
+                        placeholder="Ingrese texto aqui"></textarea>
+                </div>
+                <div class="alerta">
+                    <img src="asset/alert.svg" alt="icono">
+                    <p class="parrafo__Uno">Solo letras minúsculas y sin acentos</p>
+                </div>
+                <div class="contenedor__botonesDeAccion">
+                    <input id="btnEncriptar" class="btnEncriptar" type="button" value="Encriptar"></input>
+                    <input id="btnDesencriptar" class="btnDesencriptar" type="button" value="Desencriptar"></input>
+                </div>
+            </section>
+
+            <section class="contenedor__Dos">
+                <div id="muneico" class="contenedor__Muneco">
+                    <img class="dibujo" src="asset/Muñeco.svg" alt="dibujo">
+                </div>
+                <span id="loader" class="loader__Uno ocultarInfo"></span>
+                <div id="contenedor__Parrafo" class="contenedor__Parrafo">
+                    <h3>Ningún mensaje fue encontrado</h3>
+                    <p class="parrafo__Dos">Ingresa el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div id="parrafo__Encriptado" class="parrafo__Encriptado">
+                    <p id="parrafo__Resultado" class="parrafo__Resultado"></p>
+                </div>
+                <div id="btnCopiarDisable" class="contenedor__btnCopiarDisable">
+                    <input class="btn__copiar" type="button" value="Copiar"></input>
+                </div>
+            </section>
+    </div>
     </main>
     <script src="js/controler.js"></script>
 </body>
