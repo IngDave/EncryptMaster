@@ -1,19 +1,20 @@
+/**reset document html*/
 * {
     border: 0;
-	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-
+:root {
+	--bg-general:linear-gradient(to right, #000000, #0f9b0f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    --bg: #e2e3e6;
+	--fg: #ffffff;
+	--dur: 8s;
+}
 
 body {
-    background: #F3F5FC;
+ background: var(--bg-general);
 }
 
-.ocultar{
-    display: none;
-    opacity: 0;
-}
 
 main {
     display: flex;
@@ -21,15 +22,14 @@ main {
     margin: 0rem 1rem;
 }
 
-
-:root {
-	--bg: #e2e3e6;
-	--fg: #0A3871;
-	--dur: 8s;
+.ocultar{
+    display: none;
+    opacity: 0;
 }
 
+/** preloader configurations*/
 .contenedor {
-	background: var(--bg);
+	background: var(--bg-general);
 	color: var(--fg);
 	display: grid;
 	place-items: center;
@@ -150,13 +150,13 @@ main {
 	transform: rotate(-150deg)
 }
 
-/* Dark theme */
+/* Dark theme 
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bg: #17181c;
 		--fg: #e3e4e8;
 	}
-}
+}*/
 
 /* Animations */
 @keyframes moveOut1 {
@@ -207,6 +207,11 @@ main {
 }/* fin loader de carga*/
 
 
+
+main input {
+    cursor: pointer;
+}
+
 .logo {
     align-items: left;
     padding: 1rem 0rem;
@@ -225,22 +230,23 @@ main {
     background-color: #244cff07;
     border: none;
     font-size: 1.5rem;
-    color: #0A3871;
+    color: #5a875b;
     outline: none;
     transition: all .2s;
 }
 
 .text__Area textarea::placeholder {
-    color: #8aa4c4;
+    color: #98d484;
 }
 
 .text__Area textarea:hover {
     border: none;
-    background-color: #e8e9eb54;
+    background-color: #94cc8a54;
 }
 
-.alerta img {
-    height: 2rem;
+.alerta .logo__Alert {
+    width: 20px;
+    height: 20px;
     padding: .5rem 0rem;
 }
 
@@ -248,6 +254,7 @@ main {
     display: flex;
     justify-content: left;
     align-items: center;
+    color: white;
 }
 
 .alerta .parrafo__Uno {
@@ -263,7 +270,7 @@ main {
     justify-content: center;
     background-color: white;
     border-radius: 25px;
-    width: 35%;
+    width: 25%;
 }
 
 .contenedor__Dos .parrafo__Dos,
@@ -304,30 +311,42 @@ h3 {
     padding: 0rem 0rem 3rem 0rem;
 }
 
-main input {
-    cursor: pointer;
-}
 
 .btnEncriptar {
     width: 15rem;
     height: 3rem;
     border-radius: 24px;
     border: none;
-    background-color: #0A3871;
-    color: white;
+    background-color: #0D870D;
+    color: #ffffff;
     font-size: 1.2rem;
     margin-right: 1rem;
+}
+
+.btnEncriptar:hover {
+    background-color: #00ff8022;
+    transform: translateY(3px);
+    transition: all .5s ease;
 }
 
 .btnDesencriptar {
     width: 15rem;
     height: 3rem;
     border-radius: 3rem;
-    border: 1px solid #0A3871;
+    border: 1px solid #0D870D;
     background-color: #0a387100;
-    color: #0A3871;
-    font-size: 1rem;
+    color: #0D870D;
+    font-size: 1.2rem;
 }
+
+.btnDesencriptar:hover{
+background-color: #0D870D;
+color: rgb(255, 255, 255);
+transform: translateY(3px);
+transition: all .5s ease;
+border: none;
+}
+
 
 .contenedor__btnCopiarDisable {
     padding: 1rem;
@@ -355,7 +374,7 @@ main input {
 .loader__Uno {
     height: 5px;
     width: 5px;
-    color: #0A3871;
+    color: #0D870D;
     box-shadow: -10px -10px 0 5px,
                 -10px -10px 0 5px,
                 -10px -10px 0 5px,
@@ -491,7 +510,7 @@ main input {
         padding-bottom: .5rem;
     }
 
-    .alerta img {
+    .alerta .logo__Alert {
         height: .8rem;
         padding-top: .5rem;
     }

@@ -1,77 +1,124 @@
+//seccion del preloader: permite que el preloader ejecute un tiempo
+const d = document;
+let contenido = d.getElementById('contenido');
 
+function ocultarPreloader(tiempo) {
+    setTimeout(function () {
+        d.getElementById('preloader').style.display = 'none';
+    }, tiempo);
+    setTimeout(() => {
+        contenido.classList.remove("ocultar");
+    }, tiempo);
+}
+ocultarPreloader(2000);
+
+//seccion del encriptador:
 
 // La letra "e" es convertida para "enter"
 // La letra "i" es convertida para "imes"
 // La letra "a" es convertida para "ai"
 // La letra "o" es convertida para "ober"
 // La letra "u" es convertida para "ufat"
-const d = document;
+
 const btnEncriptar = d.getElementById('btnEncriptar');
 const btnDesencriptar = d.getElementById('btnDesencriptar');
-const textarea = d.getElementById('caja__Texto');
+const btnCopiar = d.getElementById('btn__copiar');
+const textArea = d.getElementById('caja__Texto');
 const loader = d.getElementById('loader');
 const muneico = d.getElementById('muneico');
 const parrafoDos = d.getElementById('contenedor__Parrafo');
 const btnCopiarDisable = d.getElementById('btnCopiarDisable');
 const textoResultadoArea = d.getElementById('parrafo__Resultado');
-let contenido = d.getElementById('contenido');
 
-/**permite que el preloader ejecute un tiempo*/
-function ocultarPreloader(tiempo) {
-    setTimeout(function () {
-        d.getElementById('preloader').style.display = 'none';
-    }, tiempo);
+const llaves = [
+    ["a", "!"],
+    ["b", "$-"],
+    ["c", "/**"],
+    ["d", "*"],
+    ["e", "ufat"],
+    ["f", "mem"],
+    ["g", "daw"],
+    ["h", "ai"],
+    ["i", "ober"],
+    ["j", "ufat"],
+    ["k", "j{{"],
+    ["l", "mss"],
+    ["m", "+++"],
+    ["n", "none"],
+    ["o", "oso"],
+    ["p", "pe!"],
+    ["q", "date"],
+    ["r", "air"],
+    ["s", "rober"],
+    ["t", "bufat"],
+    ["u", "mmm"],
+    ["v", "times"],
+    ["x", "sar"],
+    ["y", "row"],
+    ["z", "idave"]
+]; //diccionario reemplazable para mejores cifrados
+
+/**Logica para encriptar mensaje*/
+function encriptarMensaje(mensaje) {
+    let mensajeEncriptado = "";
+    for (let i = 0; i < mensaje.length; i++) {
+        let letra = mensaje[i];
+        let encriptada = letra;
+        for (let j = 0; j < llaves.length; j++) {
+            if (letra === llaves[j][0]) {
+                encriptada = llaves[j][1];
+                break;
+            }
+        }
+        mensajeEncriptado += encriptada;
+    }
+    return mensajeEncriptado;
 }
-ocultarPreloader(1800);
 
-setTimeout(()=> {
-    contenido.classList.remove("ocultar");
-}, 1820);
-
-
-/*agregamos el evento de "hacer click" y lo ejecutamos en una funcion
-*/
-btnEncriptar.onclick = encriptar;
-function encriptar() {
-
-
+/**Logica para desencriptar mensaje*/
+function desencriptarMensaje(mensaje) {
+    let mensajeDesencriptado = mensaje;
+    for (let i = 0; i < llaves.length; i++) {
+        let eRegular = new RegExp(llaves[i][1]);
+        mensajeDesencriptado = mensajeDesencriptado.replace(eRegular, llaves[i][0]);
+    }
+    return mensajeDesencriptado;
 }
 
-textarea.addEventListener("input", (e) => {
+
+textArea.addEventListener("input", (e) => {
     muneico.style.display = "none";
     parrafoDos.style.display = "none"
-    console.log(e.target.value)
     loader.classList.remove('ocultarInfo');
     textoResultadoArea.textContent = "Cifrando texto";
 });
 
-//tomamos el valor del area de texto
-/*function resetTexto() {
-    let area = d.getElementById('textarea');
-    return area.value;
-}
+btnEncriptar.addEventListener('click', (e) => {
+    e.preventDefault(); // previene la ejecucion del evento
+    let mensaje = textArea.value.toLowerCase();
+    let msj = encriptarMensaje(mensaje)
+    textoResultadoArea.textContent = msj;
+    btnCopiarEnable()
 
-ocultamos el primer contenedor
-function ocultarInfo() {
-    muneico.classList.add("ocultarInfo");
-    parrafoDos.classList.add("ocultarInfo");
-}
+})
 
-//desactivamos la clase contenedor__btnCopiarDisable para cambiarla por la clase contenedor__btnCopiarEnable
 function btnCopiarEnable() {
-    if (btnCopiarDisable.classList.contains('contenedor__btnCopiarDisable')) {
+    if (textoResultadoArea.textContent.trim() !== '') {
         btnCopiarDisable.classList.remove('contenedor__btnCopiarDisable');
         btnCopiarDisable.classList.add('contenedor__btnCopiarEnable');
     }
 }
 
+btnDesencriptar.addEventListener('click', (e) => {
+    e.preventDefault(); // previene la ejecucion del evento
+    let mensaje = textArea.value.toLowerCase();
+    let msj = desencriptarMensaje(mensaje)
+    textoResultadoArea.textContent = msj;
+    btnCopiarEnable()
 
+});
 
-
-/*
-encriptar.addEventListener("click", e =>{
-    e.preventDefault();
-    let texto = textoAEncriptar.value;
-    let txt = texto.normalize("NFD").replace(/[$\.¿\?~!\¡@#%^&*()_|}\{[\]>\<:"`;,\u0300-\u036f']/g, " ");
-    console.log(txt);
-})*/
+btnCopiar.addEventListener('copy', 'click', (event) => {
+    event.clipboardData.setData('text/plain', 'Texto copiado exitosamente.');
+    btnCopiar.textContent = '';
+});

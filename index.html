@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/desing.css">
-    <title> Encriptador de textos | IngDave </title>
+    <link rel="icon" href="asset/favicon.png">
+    <title> Encriptador de textos </title>
 </head>
 
 <body>
@@ -61,11 +62,9 @@
             <div class="hexagon__sector"></div>
         </div>
     </div>
-
     <div class="ocultar" id="contenido">
-
         <header class="logo">
-            <img src="asset/Logo.svg" alt="alura logo">
+            <img src="asset/" alt="alura logo">
         </header>
         <main>
             <section class="contenedor__Uno">
@@ -74,7 +73,7 @@
                         placeholder="Ingrese texto aqui"></textarea>
                 </div>
                 <div class="alerta">
-                    <img src="asset/alert.svg" alt="icono">
+                    <img class="logo__Alert" src="asset/alert.svg" alt="icono">
                     <p class="parrafo__Uno">Solo letras minúsculas y sin acentos</p>
                 </div>
                 <div class="contenedor__botonesDeAccion">
@@ -85,12 +84,12 @@
 
             <section class="contenedor__Dos">
                 <div id="muneico" class="contenedor__Muneco">
-                    <img class="dibujo" src="asset/Muñeco.svg" alt="dibujo">
+                    <img class="dibujo" src="asset/LogoSectionDos.png" alt="dibujo">
                 </div>
                 <span id="loader" class="loader__Uno ocultarInfo"></span>
                 <div id="contenedor__Parrafo" class="contenedor__Parrafo">
-                    <h3>Ningún mensaje fue encontrado</h3>
-                    <p class="parrafo__Dos">Ingresa el texto que desees encriptar o desencriptar.</p>
+                    <h3 id="h3">Ningún mensaje fue encontrado</h3>
+                    <p id="parrafo__Dos">Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
                 <div id="parrafo__Encriptado" class="parrafo__Encriptado">
                     <p id="parrafo__Resultado" class="parrafo__Resultado"></p>
