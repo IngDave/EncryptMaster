@@ -14,12 +14,6 @@ ocultarPreloader(2000);
 
 //seccion del encriptador:
 
-// La letra "e" es convertida para "enter"
-// La letra "i" es convertida para "imes"
-// La letra "a" es convertida para "ai"
-// La letra "o" es convertida para "ober"
-// La letra "u" es convertida para "ufat"
-
 const btnEncriptar = d.getElementById('btnEncriptar');
 const btnDesencriptar = d.getElementById('btnDesencriptar');
 const btnCopiar = d.getElementById('btn__copiar');
@@ -29,36 +23,37 @@ const muneico = d.getElementById('muneico');
 const parrafoDos = d.getElementById('contenedor__Parrafo');
 const btnCopiarDisable = d.getElementById('btnCopiarDisable');
 const textoResultadoArea = d.getElementById('parrafo__Resultado');
+let isEncrypting = false;
 
 const llaves = [
-    ["a", "!"],
-    ["b", "$-"],
-    ["c", "/**"],
-    ["d", "*"],
-    ["e", "ufat"],
-    ["f", "mem"],
-    ["g", "daw"],
-    ["h", "ai"],
-    ["i", "ober"],
-    ["j", "ufat"],
-    ["k", "j{{"],
-    ["l", "mss"],
-    ["m", "+++"],
-    ["n", "none"],
-    ["o", "oso"],
-    ["p", "pe!"],
-    ["q", "date"],
-    ["r", "air"],
-    ["s", "rober"],
-    ["t", "bufat"],
-    ["u", "mmm"],
-    ["v", "times"],
-    ["x", "sar"],
-    ["y", "row"],
-    ["z", "idave"]
+    ["a", "u"],
+    ["b", "v"],
+    ["c", "w"],
+    ["d", "x"],
+    ["e", "y"],
+    ["f", "z"],
+    ["g", "c"],
+    ["h", "d"],
+    ["i", "e"],
+    ["j", "f"],
+    ["k", "g"],
+    ["l", "h"],
+    ["m", "i"],
+    ["n", "j"],
+    ["o", "k"],
+    ["p", "l"],
+    ["q", "m"],
+    ["r", "n"],
+    ["s", "o"],
+    ["t", "p"],
+    ["u", "q"],
+    ["v", "r"],
+    ["x", "s"],
+    ["y", "t"],
+    ["z", "a"]
 ]; //diccionario reemplazable para mejores cifrados
 
-/**Logica para encriptar mensaje*/
+//Logica para encriptar mensaje
 function encriptarMensaje(mensaje) {
     let mensajeEncriptado = "";
     for (let i = 0; i < mensaje.length; i++) {
@@ -75,32 +70,35 @@ function encriptarMensaje(mensaje) {
     return mensajeEncriptado;
 }
 
-/**Logica para desencriptar mensaje*/
+//Logica para desencriptar mensaje
 function desencriptarMensaje(mensaje) {
-    let mensajeDesencriptado = mensaje;
-    for (let i = 0; i < llaves.length; i++) {
-        let eRegular = new RegExp(llaves[i][1]);
-        mensajeDesencriptado = mensajeDesencriptado.replace(eRegular, llaves[i][0]);
+    let mensajeDesencriptado = "";
+    for (let i = 0; i < mensaje.length; i++) {
+        let letra = mensaje[i];
+        let encontrada = false;
+        for (let j = 0; j < llaves.length; j++) {
+            if (letra === llaves[j][1]) {
+                mensajeDesencriptado += llaves[j][0];
+                encontrada = true;
+                break;
+            }
+        }
+        // Si no se encontró una correspondencia en el diccionario, agregar el carácter tal cual
+        if (!encontrada) {
+            mensajeDesencriptado += letra;
+        }
     }
     return mensajeDesencriptado;
 }
 
 
-textArea.addEventListener("input", (e) => {
+textArea.addEventListener("input", () => {
     muneico.style.display = "none";
     parrafoDos.style.display = "none"
     loader.classList.remove('ocultarInfo');
-    textoResultadoArea.textContent = "Cifrando texto";
+    textoResultadoArea.textContent = isEncrypting ? "Descifrando texto" : "Cifrando texto";
 });
 
-btnEncriptar.addEventListener('click', (e) => {
-    e.preventDefault(); // previene la ejecucion del evento
-    let mensaje = textArea.value.toLowerCase();
-    let msj = encriptarMensaje(mensaje)
-    textoResultadoArea.textContent = msj;
-    btnCopiarEnable()
-
-})
 
 function btnCopiarEnable() {
     if (textoResultadoArea.textContent.trim() !== '') {
@@ -109,8 +107,19 @@ function btnCopiarEnable() {
     }
 }
 
+btnEncriptar.addEventListener('click', (e) => {
+    e.preventDefault(); // previene la ejecucion del evento
+    let mensaje = textArea.value.toLowerCase();
+    let msj = encriptarMensaje(mensaje)
+    textoResultadoArea.textContent = msj;
+    isEncrypting = true;
+    btnCopiarEnable()
+
+})
+
 btnDesencriptar.addEventListener('click', (e) => {
     e.preventDefault(); // previene la ejecucion del evento
+    isEncrypting = false;
     let mensaje = textArea.value.toLowerCase();
     let msj = desencriptarMensaje(mensaje)
     textoResultadoArea.textContent = msj;
@@ -118,7 +127,23 @@ btnDesencriptar.addEventListener('click', (e) => {
 
 });
 
-btnCopiar.addEventListener('copy', 'click', (event) => {
-    event.clipboardData.setData('text/plain', 'Texto copiado exitosamente.');
-    btnCopiar.textContent = '';
+btnCopiar.addEventListener('click', () => {
+    let textoCopiado =  textoResultadoArea.textContent;
+    navigator.clipboard.writeText(textoCopiado).then(() => {
+            console.log('Texto copiado al portapapeles');
+            // Puedes mostrar un mensaje al usuario aquí, si lo deseas
+            // alert('Texto copiado correctamente');
+        })
+      /*  .catch(err => {
+            console.error('Error al copiar: ', err);
+            // Puedes mostrar un mensaje de error al usuario aquí
+            alert('Hubo un error al copiar el texto. Por favor, inténtalo de nuevo.');
+        });
+
+    // Asegúrate de que el texto a copiar no esté vacío
+    if (textoResultadoArea.textContent.trim() === '') {
+        console.error('No hay texto para copiar.');
+        return;
+    }*/
+   
 });

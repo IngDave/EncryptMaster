@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/desing.css">
-    <link rel="icon" href="asset/favicon.png">
+    <link rel="icon" href="asset/qrcode.svg">
     <title> Encriptador de textos </title>
 </head>
 
 <body>
 
-    <div class="contenedor" id="preloader">
+    <div class="contenedor__preloader" id="preloader">
         <div class="hexagon" aria-label="Animated hexagonal ripples"></div>
         <div class="hexagon__group">
             <div class="hexagon__sector"></div>
@@ -64,30 +64,30 @@
     </div>
     <div class="ocultar" id="contenido">
         <header class="logo">
-            <img src="asset/" alt="alura logo">
+            <img src="asset/qrcode.svg" alt="alura logo">
         </header>
         <main>
-            <section class="contenedor__Uno">
-                <div class="text__Area">
-                    <textarea id="caja__Texto" class="caja__Texto" name="text" id="textarea"
+            <section class="contenedor__uno">
+                <div class="contenedor__uno__textArea">
+                    <textarea class="contendor__uno__cajaTexto" id="caja__Texto" name="text" id="textarea"
                         placeholder="Ingrese texto aqui"></textarea>
                 </div>
-                <div class="alerta">
-                    <img class="logo__Alert" src="asset/alert.svg" alt="icono">
-                    <p class="parrafo__Uno">Solo letras minúsculas y sin acentos</p>
+                <div class="contenedor__uno__alerta">
+                    <img class="logo__Alert" src="asset/alert.svg" alt="icono de alerta">
+                    <p class="contenedor__uno__alerta__parrafo__Uno">Solo letras minúsculas y sin acentos</p>
                 </div>
-                <div class="contenedor__botonesDeAccion">
-                    <input id="btnEncriptar" class="btnEncriptar" type="button" value="Encriptar"></input>
-                    <input id="btnDesencriptar" class="btnDesencriptar" type="button" value="Desencriptar"></input>
+                <div class="contenedor__uno__botonesDeAccion">
+                    <input class="btnEncriptar" id="btnEncriptar" type="button" value="Encriptar"></input>
+                    <input class="btnDesencriptar" id="btnDesencriptar" type="button" value="Desencriptar"></input>
                 </div>
             </section>
 
-            <section class="contenedor__Dos">
-                <div id="muneico" class="contenedor__Muneco">
+            <section class="contenedor__dos">
+                <span class="contenedor__dos__loader ocultarInfo" id="loader"></span>
+                <div class="contenedor__dos__muneco" id="muneico">
                     <img class="dibujo" src="asset/LogoSectionDos.png" alt="dibujo">
                 </div>
-                <span id="loader" class="loader__Uno ocultarInfo"></span>
-                <div id="contenedor__Parrafo" class="contenedor__Parrafo">
+                <div class="contenedor__dos__parrafo" id="contenedor__Parrafo">
                     <h3 id="h3">Ningún mensaje fue encontrado</h3>
                     <p id="parrafo__Dos">Ingresa el texto que desees encriptar o desencriptar.</p>
                 </div>
