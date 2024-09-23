@@ -127,23 +127,4 @@ btnDesencriptar.addEventListener('click', (e) => {
 
 });
 
-btnCopiar.addEventListener('click', () => {
-    let textoCopiado =  textoResultadoArea.textContent;
-    navigator.clipboard.writeText(textoCopiado).then(() => {
-            console.log('Texto copiado al portapapeles');
-            // Puedes mostrar un mensaje al usuario aquí, si lo deseas
-            // alert('Texto copiado correctamente');
-        })
-      /*  .catch(err => {
-            console.error('Error al copiar: ', err);
-            // Puedes mostrar un mensaje de error al usuario aquí
-            alert('Hubo un error al copiar el texto. Por favor, inténtalo de nuevo.');
-        });
-
-    // Asegúrate de que el texto a copiar no esté vacío
-    if (textoResultadoArea.textContent.trim() === '') {
-        console.error('No hay texto para copiar.');
-        return;
-    }*/
-   
-});
+btnCopiar.addEventListener('click', copiarAlPortapapeles);

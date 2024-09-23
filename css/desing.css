@@ -471,7 +471,7 @@ h3 {
 
 .contenedor__dos__loader {
 
-    width: 48px;
+    width: 14px;
     height: 48px;
     background: #0d870dc6;
     animation: rotate 1.2s linear infinite;
@@ -561,6 +561,7 @@ h3 {
         border-radius: 1rem;
         width: 100dvh;
         height: 200px;
+        padding-top: 3rem;
         max-width: 20rem;
         
     }
