@@ -289,6 +289,7 @@ main input {
 }
 
 .logo img {
+    width: 90px;
     align-items: left;
     padding: 1rem 2.3rem;
 }
@@ -471,7 +472,7 @@ h3 {
 
 .contenedor__dos__loader {
 
-    width: 14px;
+    width: 48px;
     height: 48px;
     background: #0d870dc6;
     animation: rotate 1.2s linear infinite;
@@ -493,6 +494,7 @@ h3 {
   }
     
 @media (max-width: 900px) {
+
     main {
         flex-direction: column;
         justify-content: flex-start;
@@ -507,6 +509,14 @@ h3 {
         flex-direction: column;
         align-items: center;
     }
+
+    .contenedor__dos__loader {
+
+        width:29px;
+        height: 35px;
+        background: #0d870dc6;
+        animation: rotate 1.2s linear infinite;
+      }
 
     .contenedor__uno {
         width: 90%;
